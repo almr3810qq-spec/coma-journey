@@ -7,7 +7,7 @@ export const defaultUiTexts: UiTexts = {
   titleEn: 'Coma Journey',
   titleAr: 'رحلتي غيبوبة',
   taglineEn: 'Literary Whispers from the Subconscious',
-  taglineAr: 'رؤية أدبية من غياهب اللاوعي',
+  taglineAr: '',
   booksEn: 'E-Books',
   booksAr: 'المؤلفات',
   aboutEn: 'About the Author',
@@ -30,7 +30,7 @@ export const defaultUiTexts: UiTexts = {
   heroSecondaryCtaEn: 'Meet the Author',
   heroSecondaryCtaAr: 'من هو الكاتب رحلتي غيبوبة؟',
   heroPhilosophyQuoteEn: '"In the absolute silence of the coma, I was not dead... I was simply rebuilding my entire alphabet from scratch."',
-  heroPhilosophyQuoteAr: '"في العتمة المطلقة للغيبوبة، لم أكن ميتاً.. بل كنت أعيد كتابة أبجديتي الخاصة من الصفر."',
+  heroPhilosophyQuoteAr: '',
   
   searchPlaceholderEn: 'Search literary works or titles...',
   searchPlaceholderAr: 'ابحث عن عمل روائي أو عنوان...',
