@@ -1,0 +1,602 @@
+@import url('https://fonts.googleapis.com/css2?family=Cairo:wght@300;400;500;600;700&family=Amiri:ital,wght@0,400;0,700;1,400;1,700&family=Inter:wght@300;400;500;600;700&family=Playfair+Display:ital,wght@0,400;0,500;0,600;0,700;1,400;1,600&display=swap');
+@import "tailwindcss";
+
+@theme {
+  --font-sans: "Inter", "Cairo", system-ui, sans-serif;
+  --font-serif: "Playfair Display", "Amiri", serif;
+  
+  --color-brand-paper: #fbfaf5;
+  --color-brand-ink: #0a0a0a;
+  --color-brand-deep: #0c0c0c;
+  --color-brand-gold: #c5a368;
+  --color-brand-gold-muted: #b59258;
+  --color-brand-crimson: #8c2a1c;
+  --color-brand-teal: #16241e;
+  
+  --animate-fade-in: fade-in 0.6s ease-out forwards;
+  --animate-slide-up: slide-up 0.8s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+}
+
+@keyframes fade-in {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+@keyframes slide-up {
+  from { transform: translateY(20px); opacity: 0; }
+  to { transform: translateY(0); opacity: 1; }
+}
+
+body {
+  background-color: #0a0a0a;
+  color: #d4d4d4;
+  font-family: var(--font-sans);
+  overflow-x: hidden;
+  text-rendering: optimizeLegibility;
+}
+
+/* Creamy Elegant Theme Mode - Classic warm book aesthetic */
+html.creamy-theme, .creamy-theme {
+  background-color: #FAF6EB !important;
+  color: #2D231B !important;
+  --font-sans: "Cairo", "Inter", system-ui, sans-serif !important;
+  --font-serif: "Playfair Display", "Amiri", serif !important;
+}
+
+.creamy-theme body {
+  background-color: #FAF6EB !important;
+  color: #2D231B !important;
+  font-family: "Cairo", "Inter", system-ui, sans-serif !important;
+}
+
+.creamy-theme h1, 
+.creamy-theme h2, 
+.creamy-theme h3, 
+.creamy-theme h4, 
+.creamy-theme h5, 
+.creamy-theme h6 {
+  font-family: "Playfair Display", "Amiri", serif !important;
+  color: #1E140C !important;
+  font-weight: 600 !important;
+}
+
+.creamy-theme header {
+  background-color: rgba(250, 246, 235, 0.95) !important;
+  border-bottom: 1px solid rgba(45, 35, 27, 0.12) !important;
+  box-shadow: 0 4px 30px rgba(45, 35, 27, 0.04) !important;
+}
+
+.creamy-theme header a, 
+.creamy-theme header button, 
+.creamy-theme header span {
+  color: #2D231B !important;
+}
+
+.creamy-theme header button:hover {
+  color: #c5a368 !important;
+}
+
+/* Background Color Overrides for Creamy Theme - Forced to 100% Solid to resolve dark/silvery-grey tints */
+.creamy-theme .bg-brand-ink {
+  background-color: #FAF6EB !important;
+}
+.creamy-theme .bg-brand-deep {
+  background-color: #FCFAF2 !important; /* Premium card background */
+  border-color: rgba(45, 35, 27, 0.15) !important;
+}
+.creamy-theme .bg-brand-deep\/30,
+.creamy-theme .bg-brand-deep\/40,
+.creamy-theme .bg-brand-deep\/20,
+.creamy-theme .bg-brand-deep\/60,
+.creamy-theme .bg-brand-deep\/80 {
+  background-color: #FCFAF2 !important; /* 100% solid, no opacity */
+  opacity: 1 !important;
+}
+.creamy-theme .bg-\[\#080808\] {
+  background-color: #EDE5D3 !important; /* Warm, rich footer */
+}
+.creamy-theme .bg-\[\#0c0c0c\] {
+  background-color: #E8DEC9 !important;
+}
+.creamy-theme .bg-white\/5,
+.creamy-theme .bg-white\/10,
+.creamy-theme .bg-white\/20,
+.creamy-theme .bg-white\/\[0\.02\],
+.creamy-theme .bg-white\/\[0\.01\] {
+  background-color: rgba(45, 35, 27, 0.04) !important;
+}
+.creamy-theme .bg-slate-900\/40,
+.creamy-theme .bg-slate-900\/30,
+.creamy-theme .bg-slate-900\/50,
+.creamy-theme .bg-slate-850 {
+  background-color: #F5EFE0 !important; /* 100% solid creamy input/box */
+  color: #1E140C !important;
+}
+.creamy-theme .bg-brand-gold\/5 {
+  background-color: rgba(197, 163, 104, 0.08) !important;
+}
+.creamy-theme .bg-brand-ink\/40,
+.creamy-theme .bg-brand-ink\/20,
+.creamy-theme .bg-brand-ink\/95 {
+  background-color: #FAF6EB !important; /* 100% solid base creamy background */
+  opacity: 1 !important;
+}
+.creamy-theme .bg-black\/40,
+.creamy-theme .bg-black\/30,
+.creamy-theme .bg-black\/80 {
+  background-color: #FCFAF2 !important; /* 100% solid creamy post card background */
+  opacity: 1 !important;
+}
+
+/* Text Overrides for Creamy Theme */
+.creamy-theme .text-white {
+  color: #1E140C !important;
+}
+.creamy-theme .text-white\/80 {
+  color: #2D231B !important;
+}
+.creamy-theme .text-white\/90 {
+  color: #1E140C !important;
+}
+.creamy-theme .text-white\/60 {
+  color: #554437 !important;
+}
+.creamy-theme .text-white\/50 {
+  color: #6C5646 !important;
+}
+.creamy-theme .text-white\/30 {
+  color: rgba(45, 35, 27, 0.3) !important;
+}
+.creamy-theme .text-slate-100 {
+  color: #1E140C !important;
+}
+.creamy-theme .text-slate-200 {
+  color: #2D231B !important;
+}
+.creamy-theme .text-slate-300 {
+  color: #3D3025 !important;
+}
+.creamy-theme .text-slate-300\/80 {
+  color: #4A3A2D !important;
+}
+.creamy-theme .text-slate-400 {
+  color: #554437 !important;
+}
+.creamy-theme .text-slate-500 {
+  color: #6C5646 !important;
+}
+.creamy-theme .text-slate-600 {
+  color: #836B58 !important;
+}
+.creamy-theme .text-brand-gold {
+  color: #8C6B30 !important; /* Darker warm gold with high contrast */
+}
+
+/* Blue elements and action buttons overrides for Creamy Theme to match aesthetic */
+.creamy-theme .bg-blue-600 {
+  background-color: #8C6B30 !important; /* Elegant warm gold instead of electric blue */
+  color: #FCFAF2 !important;
+}
+.creamy-theme .text-blue-500 {
+  color: #8C6B30 !important; /* Elegant warm gold text when liked */
+}
+.creamy-theme .bg-blue-500\/5 {
+  background-color: rgba(140, 107, 48, 0.08) !important;
+}
+
+/* Hover Color Fixes - Prevents text and elements from turning white and disappearing */
+.creamy-theme .hover\:text-white:hover {
+  color: #8C6B30 !important; /* Rich elegant golden-brown color on hover */
+}
+.creamy-theme .hover\:text-white\/80:hover {
+  color: #1E140C !important;
+}
+.creamy-theme .hover\:text-slate-100:hover,
+.creamy-theme .hover\:text-slate-200:hover,
+.creamy-theme .hover\:text-slate-300:hover,
+.creamy-theme .hover\:text-slate-400:hover {
+  color: #1E140C !important;
+}
+.creamy-theme .hover\:text-brand-gold\/90:hover {
+  color: #8C6B30 !important;
+}
+
+/* Hover Background Shading Fixes - Use warm parchment/coffee shades instead of bright white */
+.creamy-theme .hover\:bg-white\/10:hover {
+  background-color: rgba(45, 35, 27, 0.08) !important;
+}
+.creamy-theme .hover\:bg-white\/5:hover {
+  background-color: rgba(45, 35, 27, 0.04) !important;
+}
+
+/* Border Overrides for Creamy Theme to eliminate dark/silver lines on sides */
+.creamy-theme .border-white\/5,
+.creamy-theme .border-white\/10,
+.creamy-theme .border-white\/15,
+.creamy-theme .border-white\/20,
+.creamy-theme .border-slate-800,
+.creamy-theme .border-slate-700,
+.creamy-theme .border-slate-900,
+.creamy-theme .border-brand-gold\/30,
+.creamy-theme .border-brand-gold\/20 {
+  border-color: rgba(45, 35, 27, 0.15) !important;
+}
+
+/* Book spine overrides - Softer coffee hue instead of pitch black */
+.creamy-theme .book-spine-left {
+  background: linear-gradient(to right, rgba(45,35,27,0.15) 0%, rgba(255,255,255,0.05) 3%, rgba(45,35,27,0.06) 8%, rgba(255,255,255,0.0) 15%) !important;
+}
+.creamy-theme .book-spine-right {
+  background: linear-gradient(to left, rgba(45,35,27,0.15) 0%, rgba(255,255,255,0.05) 3%, rgba(45,35,27,0.06) 8%, rgba(255,255,255,0.0) 15%) !important;
+}
+
+/* Forms, Inputs, Buttons in Creamy Theme */
+.creamy-theme input, .creamy-theme textarea, .creamy-theme select {
+  background-color: #FFFFFF !important;
+  color: #1E140C !important;
+  border: 1px solid rgba(45, 35, 27, 0.25) !important;
+}
+.creamy-theme input::placeholder, .creamy-theme textarea::placeholder {
+  color: #8E7A6B !important;
+}
+.creamy-theme input:focus, .creamy-theme textarea:focus, .creamy-theme select:focus {
+  border-color: #8C6B30 !important;
+  box-shadow: 0 0 0 1px rgba(140, 107, 48, 0.2) !important;
+}
+
+/* Post list, components specific styling */
+.creamy-theme .shadow-2xl {
+  box-shadow: 0 10px 40px rgba(45, 35, 27, 0.06) !important;
+}
+.creamy-theme .shadow-lg {
+  box-shadow: 0 4px 20px rgba(45, 35, 27, 0.04) !important;
+}
+
+/* Keep elements designated as light-themed or keep pristine */
+.creamy-theme .keep-light, .creamy-theme .keep-light * {
+  color: #ffffff !important;
+}
+
+/* Custom scrollbar in Creamy Theme - Completely resolves the "black line on the side" */
+.creamy-theme ::-webkit-scrollbar {
+  width: 8px !important;
+  height: 8px !important;
+}
+.creamy-theme ::-webkit-scrollbar-track {
+  background: #FAF6EB !important;
+}
+.creamy-theme ::-webkit-scrollbar-thumb {
+  background: #E8DEC9 !important;
+  border-radius: 9999px !important;
+  border: 2px solid #FAF6EB !important;
+}
+.creamy-theme ::-webkit-scrollbar-thumb:hover {
+  background: #8C6B30 !important;
+}
+
+/* Genuinely Elegant Paper Light Mode Design Overrides - A Professional Antique Printed Book Theme */
+html.light, .light {
+  background-color: #faf8f0 !important;
+  color: #1a1612 !important;
+  /* Ensure the main sans-serif font is "Cairo" (Arabic) paired with "Inter" (English) for extreme screen clarity in light mode */
+  --font-sans: "Cairo", "Inter", system-ui, sans-serif !important;
+  --font-serif: "Playfair Display", "Amiri", serif !important;
+}
+
+/* Base Body Override in Light Mode with Font Transition */
+.light body {
+  background-color: #faf8f0 !important;
+  color: #1a1612 !important;
+  font-family: "Cairo", "Inter", system-ui, sans-serif !important;
+  transition: background-color 0.5s ease, color 0.5s ease, font-family 0.5s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+/* Global Typography for Light Mode to Ensure Every Header is Exquisitely Styled */
+.light h1, .light h2, .light h3, .light h4, .light h5, .light h6 {
+  font-family: "Playfair Display", "Amiri", serif !important;
+  color: #110e0c !important;
+  font-weight: 500 !important;
+}
+
+/* Ensure monospace elements remain highly readable */
+.light .font-mono, .light code, .light pre {
+  font-family: "JetBrains Mono", monospace !important;
+  font-size: 0.85em !important;
+}
+
+/* Keep elements designated as light-themed (like dark book covers or dark image text overlays) pristine */
+.light .keep-light, .light .keep-light * {
+  color: #ffffff !important;
+}
+.light .keep-light .font-serif, .light .keep-light .font-serif * {
+  font-family: "Playfair Display", "Amiri", serif !important;
+}
+.light .keep-light .text-brand-gold, .light .keep-light .text-brand-gold\/90 {
+  color: #c5a368 !important;
+}
+.light .keep-light .text-slate-100 {
+  color: #f1f5f9 !important;
+}
+.light .keep-light .text-slate-400 {
+  color: #94a3b8 !important;
+}
+
+/* Background Color Overrides for Light Mode - Luxurious Sepia Paper Palette */
+.light .bg-brand-ink {
+  background-color: #faf8f0 !important;
+}
+.light .bg-brand-deep {
+  background-color: #f4f1e4 !important; /* Premium thick luxury paper stock card */
+}
+.light .bg-brand-deep\/80 {
+  background-color: rgba(244, 241, 228, 0.9) !important;
+}
+.light .bg-\[\#080808\] {
+  background-color: #e8e4d2 !important; /* Slightly darker rich antique background for footer */
+}
+.light .bg-\[\#0c0c0c\] {
+  background-color: #eae6d4 !important;
+}
+.light .bg-slate-900\/40 {
+  background-color: rgba(0, 0, 0, 0.04) !important;
+}
+.light .bg-white\/5 {
+  background-color: rgba(0, 0, 0, 0.03) !important;
+}
+.light .bg-white\/10 {
+  background-color: rgba(0, 0, 0, 0.05) !important;
+}
+.light .bg-brand-teal\/20 {
+  background-color: rgba(135, 100, 53, 0.08) !important;
+}
+
+/* Text Color Overrides for Light Mode - Enhanced for Perfect Scientific Contrast */
+.light .text-white {
+  color: #0c0907 !important;
+}
+.light .text-white\/80 {
+  color: #15110e !important;
+}
+.light .text-white\/90 {
+  color: #100d0a !important;
+}
+.light .text-white\/60 {
+  color: #3c352f !important;
+}
+.light .text-white\/50 {
+  color: #4e463f !important;
+}
+.light .text-slate-100 {
+  color: #120e0c !important;
+}
+.light .text-slate-200 {
+  color: #181512 !important;
+}
+.light .text-slate-300 {
+  color: #24201b !important;
+}
+.light .text-slate-300\/80 {
+  color: #2a2520 !important;
+}
+.light .text-slate-400 {
+  color: #38312a !important;
+}
+.light .text-slate-500 {
+  color: #4a4137 !important;
+}
+.light .text-brand-gold {
+  color: #855513 !important; /* Deeper high-contrast golden ink */
+}
+.light .text-white\/30 {
+  color: rgba(0, 0, 0, 0.3) !important;
+}
+.light .text-emerald-400 {
+  color: #0a694a !important;
+}
+.light .text-red-400 {
+  color: #b91c1c !important;
+}
+
+/* Border Overrides for Light Mode - Elegant Golden Ink Rules */
+.light .border-white\/10 {
+  border-color: rgba(135, 100, 53, 0.14) !important;
+}
+.light .border-white\/20 {
+  border-color: rgba(135, 100, 53, 0.22) !important;
+}
+.light .border-white\/5 {
+  border-color: rgba(135, 100, 53, 0.07) !important;
+}
+.light .border-brand-gold\/30 {
+  border-color: rgba(140, 98, 43, 0.35) !important;
+}
+.light .border-brand-gold\/20 {
+  border-color: rgba(140, 98, 43, 0.2) !important;
+}
+
+/* Hero Background Lighting Overlay & Grid Overlay in Light Mode */
+.light .bg-brand-gold\/5 {
+  background-color: rgba(140, 98, 43, 0.03) !important;
+}
+.light .bg-\[linear-gradient\(to_right\,\#1a1a1a_1px\,transparent_1px\)\,linear-gradient\(to_bottom\,\#1a1a1a_1px\,transparent_1px\)\] {
+  background-image: linear-gradient(to right, rgba(140, 98, 43, 0.04) 1px, transparent 1px), linear-gradient(to bottom, rgba(140, 98, 43, 0.04) 1px, transparent 1px) !important;
+}
+
+/* Header Sticky / Backdrop Blur Overlay in Light Mode */
+.light header {
+  background-color: rgba(250, 248, 240, 0.9) !important;
+  border-bottom: 1px solid rgba(135, 100, 53, 0.12) !important;
+  box-shadow: 0 4px 30px rgba(135, 100, 53, 0.04) !important;
+}
+
+/* Admin Panel and Modal Forms Specific Styling in Light Mode */
+.light input, .light textarea, .light select {
+  background-color: #ffffff !important;
+  color: #1a1612 !important;
+  border: 1px solid rgba(135, 100, 53, 0.25) !important;
+}
+.light input:focus, .light textarea:focus, .light select:focus {
+  border-color: #8c622b !important;
+  box-shadow: 0 0 0 2px rgba(140, 98, 43, 0.1) !important;
+  outline: none;
+}
+.light .rounded-xl.border.border-slate-800 {
+  border-color: rgba(135, 100, 53, 0.14) !important;
+}
+.light .bg-brand-ink\/40 {
+  background-color: rgba(244, 241, 228, 0.7) !important;
+}
+
+/* Interaction Hover & Shadow Styles */
+.light .group:hover {
+  background-color: #ede9da !important;
+  border-color: rgba(140, 98, 43, 0.4) !important;
+}
+.light .hover\:bg-white\/5:hover {
+  background-color: rgba(135, 100, 53, 0.05) !important;
+}
+.light .hover\:bg-brand-deep:hover {
+  background-color: #f4f1e4 !important;
+}
+.light .hover\:border-brand-gold\/40:hover {
+  border-color: rgba(140, 98, 43, 0.5) !important;
+}
+.light .hover\:bg-brand-gold:hover {
+  background-color: #855513 !important;
+  color: #ffffff !important;
+  border-color: #855513 !important;
+}
+.light .hover\:text-black:hover {
+  color: #ffffff !important;
+}
+
+/* Custom Scrollbar in Light Mode */
+.light ::-webkit-scrollbar-track {
+  background: #faf8f0;
+}
+.light ::-webkit-scrollbar-thumb {
+  background: #e5e0cc;
+  border: 2px solid #faf8f0;
+}
+.light ::-webkit-scrollbar-thumb:hover {
+  background: #8c622b;
+}
+
+/* Beautiful custom transitions and utilities */
+.literary-shadow {
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.6);
+}
+
+.light .literary-shadow {
+  box-shadow: 0 15px 35px rgba(140, 98, 43, 0.08) !important;
+}
+
+.gold-glow {
+  text-shadow: 0 0 12px rgba(212, 175, 55, 0.15);
+}
+
+/* RTL Specific custom line height offsets for Arabic */
+[dir="rtl"] {
+  line-height: 1.7;
+}
+
+/* Book spine effect */
+.book-spine-left {
+  background: linear-gradient(to right, rgba(0,0,0,0.45) 0%, rgba(255,255,255,0.08) 3%, rgba(0,0,0,0.15) 8%, rgba(255,255,255,0.0) 15%);
+}
+
+.book-spine-right {
+  background: linear-gradient(to left, rgba(0,0,0,0.45) 0%, rgba(255,255,255,0.08) 3%, rgba(0,0,0,0.15) 8%, rgba(255,255,255,0.0) 15%);
+}
+
+/* Custom scrollbar to keep it incredibly smooth and dark */
+::-webkit-scrollbar {
+  width: 6px;
+}
+::-webkit-scrollbar-track {
+  background: #07090d;
+}
+::-webkit-scrollbar-thumb {
+  background: #1e293b;
+  border-radius: 9999px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: #d4af37;
+}
+
+/* Dynamic smooth reader preferences transition */
+body, p, span, h1, h2, h3, h4, h5, h6, li, blockquote, button, a {
+  transition: color 0.3s ease, background-color 0.3s ease, border-color 0.3s ease;
+}
+
+/* READER TEXT CONTRAST OVERRIDES */
+
+/* 1. SOFT / DIMMED TEXT MODE (Decreased Glare) */
+.reader-text-soft .text-white {
+  color: #a3a3a3 !important;
+}
+.reader-text-soft .text-slate-100 {
+  color: #949494 !important;
+}
+.reader-text-soft .text-slate-200 {
+  color: #8c8c8c !important;
+}
+.reader-text-soft .text-slate-300 {
+  color: #7a7a7a !important;
+}
+.reader-text-soft .text-slate-400 {
+  color: #636363 !important;
+}
+
+/* Light mode overrides for soft contrast (softer charcoal on sepia paper) */
+.light .reader-text-soft .text-white,
+.reader-text-soft.light .text-white,
+.light .reader-text-soft .text-slate-100,
+.reader-text-soft.light .text-slate-100,
+.light .reader-text-soft .text-slate-200,
+.reader-text-soft.light .text-slate-200 {
+  color: #61564b !important;
+}
+.light .reader-text-soft .text-slate-300,
+.reader-text-soft.light .text-slate-300 {
+  color: #73675c !important;
+}
+.light .reader-text-soft .text-slate-400,
+.reader-text-soft.light .text-slate-400 {
+  color: #8a7d71 !important;
+}
+
+/* 2. HIGH CONTRAST / BRIGHTENED TEXT MODE (Max Clarity) */
+.reader-text-high .text-white {
+  color: #ffffff !important;
+}
+.reader-text-high .text-slate-100 {
+  color: #ffffff !important;
+}
+.reader-text-high .text-slate-200 {
+  color: #f8fafc !important;
+}
+.reader-text-high .text-slate-300 {
+  color: #f1f5f9 !important;
+}
+.reader-text-high .text-slate-400 {
+  color: #e2e8f0 !important;
+}
+
+/* Light mode overrides for high contrast (pure rich print black) */
+.light .reader-text-high .text-white,
+.reader-text-high.light .text-white,
+.light .reader-text-high .text-slate-100,
+.reader-text-high.light .text-slate-100,
+.light .reader-text-high .text-slate-200,
+.reader-text-high.light .text-slate-200 {
+  color: #000000 !important;
+}
+.light .reader-text-high .text-slate-300,
+.reader-text-high.light .text-slate-300 {
+  color: #050505 !important;
+}
+.light .reader-text-high .text-slate-400,
+.reader-text-high.light .text-slate-400 {
+  color: #0c0c0c !important;
+}
