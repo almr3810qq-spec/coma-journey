@@ -1,0 +1,6 @@
+{
+  "name": "Coma Journey",
+  "description": "An elegant, professional bilingual e-book publishing platform and secure administration panel for literary masterpieces.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}
